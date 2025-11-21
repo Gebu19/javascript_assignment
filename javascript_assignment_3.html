@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Filtered Names</h1>
+    <ul id="name-list"></ul>
+    <script>
+      const people = [
+        "Alice Anderson",
+        "Aaron Adams",
+        "Bella Brown",
+        "Brian Black",
+        "Cathy Carter",
+        "Charles Cooper",
+        "Diana Davis",
+        "Daniel Drake",
+        "Ella Evans",
+        "Ethan Edwards",
+        "Fiona Fisher",
+        "Frank Foster",
+        "Grace Green",
+        "Gavin Gray",
+        "Hannah Harris",
+        "Henry Hill",
+        "Isabella Ingram",
+        "Ian Irving",
+        "Jack Johnson",
+        "Julia James",
+      ];
+
+      const firstLetter = "B";
+
+      const result = people.filter((name) => {
+        const initial = name.charAt(0);
+        return initial === firstLetter;
+      });
+
+      console.log(result);
+      const namelistElement = document.getElementById("name-list");
+      result.forEach((item) => {
+        namelistElement.innerHTML += `<li>${item}</li>`;
+      });
+    </script>
+  </body>
+</html>
