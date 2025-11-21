@@ -6,8 +6,11 @@
     <title>Document</title>
   </head>
   <body>
+    <h1>All Names</h1>
+    <ul id="all-name-list"></ul>
+    <hr />
     <h1>Filtered Names</h1>
-    <ul id="name-list"></ul>
+    <ul id="filter-name-list"></ul>
     <script>
       const people = [
         "Alice Anderson",
@@ -31,7 +34,10 @@
         "Jack Johnson",
         "Julia James",
       ];
-
+      const allnamelistElement = document.getElementById("all-name-list");
+      people.forEach((item) => {
+        allnamelistElement.innerHTML += `<li>${item}</li>`;
+      });
       const firstLetter = "B";
 
       const result = people.filter((name) => {
@@ -40,9 +46,9 @@
       });
 
       console.log(result);
-      const namelistElement = document.getElementById("name-list");
+      const filternamelistElement = document.getElementById("filter-name-list");
       result.forEach((item) => {
-        namelistElement.innerHTML += `<li>${item}</li>`;
+        filternamelistElement.innerHTML += `<li>${item}</li>`;
       });
     </script>
   </body>
